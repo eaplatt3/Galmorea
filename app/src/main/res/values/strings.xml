@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Galmorea</string>
+    <string name="login_box">Login</string>
+    <string name="password_box">Password</string>
+    <string name="reg_link">Register</string>
+    <string name="login">LOGIN</string>
+    <string name="storedAccount">com.example.sickl.Galmorea.SHARDPREF</string>
+    <string name="reg_title">Registration</string>
+    <string name="firstname_reg">Firstname</string>
+    <string name="lastname_reg">Lastname</string>
+    <string name="dob_reg">Birthdate 01/01/1900</string>
+    <string name="email_edit">Email</string>
+    <string name="password_edit">Password</string>
+    <string name="reg_btn">Register</string>
+    <string name="parentAcc">Parent Account Registration</string>
+    <string name="childAcc">Child Account Registration</string>
+    <string name="reg_choice">Choose Registration</string>
+    <string name="childbox">Child Account</string>
+    <string name="parentbox">Parent Account</string>
+    <string name="start_game">Start Game</string>
+    <string name="high_scores">High Scores</string>
+    <string name="reset_btn">Reset</string>
+    <string name="next_level">Next Level</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/player_jump_01"
+        android:duration="400"/>
+    <item android:drawable="@drawable/player_jump_02"
+        android:duration="400"/>
+    <item android:drawable="@drawable/player_jump_03"
+        android:duration="100"/>
+    <item android:drawable="@drawable/player_jump_04"
+     android:duration="3600"/>
+    <item android:drawable="@drawable/player_jump_05"
+        android:duration="200"/>
+    <item android:drawable="@drawable/player_jump_06"
+        android:duration="200"/>
+    <item android:drawable="@drawable/player_jump_07"
+        android:duration="200"/>
+    <item android:drawable="@drawable/player_jump_08"
+        android:duration="200"/>
+    <item android:drawable="@drawable/player_jump_09"
+        android:duration="600"/>
+
+
+</animation-list>
