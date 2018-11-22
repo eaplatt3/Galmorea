@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,12 +28,17 @@ public class GalmoreasLevel_1_1 extends AppCompatActivity {
     EndDrgLsntr endDrgLsntr;
     StrtDrgLsntr strtDrgLsntr;
     int score = 0;
+   private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_galmoreas_level_1_1);
         ButterKnife.bind(this);
+
+        mediaPlayer = new MediaPlayer();
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.background_ambience);
+        mediaPlayer.start();
 
         strtDrgLsntr = new StrtDrgLsntr();
         endDrgLsntr = new EndDrgLsntr();

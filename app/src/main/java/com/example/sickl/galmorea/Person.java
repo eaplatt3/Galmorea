@@ -24,7 +24,7 @@ public class Person {
     private String password;
 
     //Constructor
-    public Person() {
+    public Person(String strFirstName, String strLastName, String strDob, String strEmail, String strPassword, String strChildAccount) {
 
         firstname = "John";
         lastname = "Doe";
@@ -69,7 +69,7 @@ public class Person {
         return lastname;
     }
 
-    public String getBirthmonth() {
+    public String getBirthDate() {
         return dob;
     }
 

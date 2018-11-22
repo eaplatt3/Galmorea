@@ -107,6 +107,7 @@
         android:scaleY="3"
         android:scaleX="3"
         android:paddingStart="40dp"
+        android:paddingTop="22dp"
         app:srcCompat="@drawable/login_idle"
         app:layout_constraintTop_toBottomOf="@id/spacer3"/>
 
