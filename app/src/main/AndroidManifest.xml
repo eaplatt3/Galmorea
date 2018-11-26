@@ -21,11 +21,14 @@
         <activity
             android:name=".GalmoreasLevel_1_1"
             android:screenOrientation="landscape" />
-        <activity android:name=".GalmoreasLevel_1_2"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".GalmoreasLevel_1_3"
-            android:screenOrientation="landscape">
-        </activity>
+        <activity
+            android:name=".GalmoreasLevel_1_2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".GalmoreasLevel_1_3"
+            android:screenOrientation="landscape" />
+        <activity android:name=".GalmoreasParentPage" />
+        <activity android:name=".GalmoreasLevel_2_1"></activity>
     </application>
 
 </manifest>

@@ -1,16 +1,12 @@
 package com.example.sickl.galmorea;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +25,7 @@ public class GalmoreasRegPage extends AppCompatActivity {
     @BindView(R.id.parentbox) RadioButton parentBox;
     @BindView(R.id.childbox) RadioButton childBox;
     List<Person> itemList;
-    DatabaseReference mRef;
+    DataBaseRefence mRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
