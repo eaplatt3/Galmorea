@@ -1,6 +1,5 @@
 package com.example.sickl.galmorea;
 
-
 //Earl Platt III
 //BCS421 - Android
 //9/30/2018
@@ -22,43 +21,56 @@ public class Person {
     private String dob;
     private String email;
     private String password;
+    private String childAcc = "Child";
+    private String parentAcc = "Parent";
 
-    //Constructor
-    public Person(String strFirstName, String strLastName, String strDob, String strEmail, String strPassword, String strChildAccount) {
 
-        firstname = "John";
-        lastname = "Doe";
-        dob = "01/01/1900";
-        email = "JohnDoe@email.com";
-        password = "ABC123";
+    public Person(){
 
     }
+
+   public Person(String strFirstName, String strLastName, String strDob, String strEmail, String strPassword) {
+            this.firstname = strFirstName;
+            this.lastname = strLastName;
+            this.dob = strDob;
+            this.email = strEmail;
+            this.password = strPassword;
+    }
+
 
     //Setters
-    public void setFirstname(String firstname) {
+    public void setFirstName(String strFirstName) {
 
-        this.firstname = firstname;
+        this.firstname = strFirstName;
 
     }
 
-    public void setLastname(String lastname) {
+    public void setLastName(String strLastName) {
 
-        this.lastname = lastname;
+        this.lastname = strLastName;
     }
 
-    public void setBirthDate(String dob) {
-        this.dob = dob;
+    public void setBirthDate(String strDob) {
+        this.dob = strDob;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String strEmail) {
 
-        this.email = email;
+        this.email = strEmail;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String strPassword) {
 
-        this.password = password;
+        this.password = strPassword;
     }
+
+    public void setChildAcc(String strChildAcc){
+        this.childAcc = strChildAcc;
+    }
+
+   /* public void setParentAcc(String strParentAcc){
+        this.childAcc = strParentAcc;
+    }*/
 
     //Getters
     public String getFirstname() {
@@ -81,5 +93,12 @@ public class Person {
         return password;
     }
 
-}
+    public String getChildAcc(){
+        return childAcc;
+    }
 
+    public String getParentAcc(){
+        return parentAcc;
+    }
+
+}
