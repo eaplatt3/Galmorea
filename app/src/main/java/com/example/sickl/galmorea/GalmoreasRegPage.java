@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class GalmoreasRegPage extends AppCompatActivity {
     @BindView(R.id.parentbox) RadioButton parentBox;
     @BindView(R.id.childbox) RadioButton childBox;
     List<Person> itemList;
-    DataBaseRefence mRef;
+    DatabaseReference mRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +57,15 @@ public class GalmoreasRegPage extends AppCompatActivity {
                             strPassword, strChildAccount));
                 }
 
-                if(parentBox.isChecked()) {
+               else if(parentBox.isChecked()) {
                     mRef.push().setValue(new Person(strFirstName, strLastName, strDob, strEmail,
                             strPassword, strParentAccount));
                 }
 
-                else
+                else {
                     Toast.makeText(getApplicationContext(), "No Account Type has been" +
-                            "selected", Toast.LENGTH_SHORT).show();
+                            " selected", Toast.LENGTH_SHORT).show();
+                }
 
 
             }
