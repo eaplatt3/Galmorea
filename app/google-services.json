@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "999850257464",
+    "firebase_url": "https://galmoras-aed01.firebaseio.com",
+    "project_id": "galmoras-aed01",
+    "storage_bucket": "galmoras-aed01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999850257464:android:426f187cb09f9c27",
+        "android_client_info": {
+          "package_name": "com.example.sickl.galmorea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999850257464-6dcjn8f7pg9r8ddf1b853ngcteg8fakl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBZvknQkFFIZwb6Ood-N25chvko4dtf9w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
