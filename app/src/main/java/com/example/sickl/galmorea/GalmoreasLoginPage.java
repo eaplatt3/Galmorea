@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -27,6 +29,15 @@ public class GalmoreasLoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_galmoreas_login_page);
         ButterKnife.bind(this);
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         player_idle.setImageResource(R.drawable.login_idle);
         AnimationDrawable playerIdle = (AnimationDrawable) player_idle.getDrawable();
