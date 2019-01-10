@@ -21,12 +21,8 @@ import butterknife.ButterKnife;
 
 public class GalmoreasLoginPage extends AppCompatActivity {
 
-    @BindView(R.id.login_box) EditText loginTxt;
-    @BindView(R.id.password_box) EditText passTxt;
     @BindView(R.id.imageView) ImageView player_idle;
-    @BindView(R.id.reg_link) TextView regLink;
-    @BindView(R.id.loginBtn) Button loginBtn;
-    GoogleSignInClient mGoogleSignInClient;
+     GoogleSignInClient mGoogleSignInClient;
 
 
 
@@ -49,30 +45,12 @@ public class GalmoreasLoginPage extends AppCompatActivity {
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
+        findViewById(R.id.sign_in_button).setOnClickListener(this);
+
 
         player_idle.setImageResource(R.drawable.login_idle);
         AnimationDrawable playerIdle = (AnimationDrawable) player_idle.getDrawable();
         playerIdle.start();
-
-        //Action Event to move from Login Page to Register Page
-        regLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startNewActivity = new Intent(v.getContext(), GalmoreasRegPage.class);
-                startActivity(startNewActivity);
-            }
-        });
-
-
-
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startActivity = new Intent(v.getContext(), GalmoreasGameStart.class);
-                startActivity(startActivity);
-
-            }
-        });
 
     }
 }
