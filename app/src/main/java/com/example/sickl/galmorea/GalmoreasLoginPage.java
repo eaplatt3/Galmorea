@@ -10,7 +10,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApi;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +26,8 @@ public class GalmoreasLoginPage extends AppCompatActivity {
     @BindView(R.id.imageView) ImageView player_idle;
     @BindView(R.id.reg_link) TextView regLink;
     @BindView(R.id.loginBtn) Button loginBtn;
+    GoogleSignInClient mGoogleSignInClient;
+
 
 
     @Override
@@ -38,6 +44,11 @@ public class GalmoreasLoginPage extends AppCompatActivity {
 
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        // Check for existing Google Sign In account, if the user is already signed in
+        // the GoogleSignInAccount will be non-null.
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
 
         player_idle.setImageResource(R.drawable.login_idle);
         AnimationDrawable playerIdle = (AnimationDrawable) player_idle.getDrawable();
