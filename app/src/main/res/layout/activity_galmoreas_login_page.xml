@@ -27,26 +27,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:paddingBottom="360dp"
+        android:paddingBottom="200dp"
         app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Email"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/spacer"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/login"/>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:text="@string/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/password"/>
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="150dp"
-        android:paddingEnd="122dp"
-        app:layout_constraintTop_toBottomOf="@+id/spacer"/>
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"/>
+
+    <TextView
+        android:id="@+id/reg_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:text="@string/reg_link"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_button"/>
+
+    <TextView
+        android:id="@+id/passwd_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:text="@string/passwd_reset"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/reg_link"/>
 
     <ImageView
         android:id="@+id/imageshadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:paddingStart="105dp"
-        android:paddingBottom="55dp"
-        android:scaleX="2.25"
-        android:scaleY="2.25"
+        android:paddingStart="110dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="180dp"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:srcCompat="@drawable/player_shadow" />
@@ -56,10 +103,11 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleY="3"
-        android:scaleX="3"
-        android:paddingStart="80dp"
-        android:paddingTop="75dp"
+        android:scaleY="2"
+        android:scaleX="2"
+        android:paddingStart="100dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="30dp"
         app:srcCompat="@drawable/login_idle"
         app:layout_constraintTop_toBottomOf="@id/title"/>
 

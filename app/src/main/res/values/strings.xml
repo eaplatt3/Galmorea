@@ -21,4 +21,8 @@
     <string name="high_scores">High Scores</string>
     <string name="reset_btn">Reset</string>
     <string name="next_level">Next Level</string>
+    <string name="login_btn">Login</string>
+    <string name="passwd_reset">Forgot Password ?</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="minimum_password">Password too short, enter minimum 8 characters!</string>
 </resources>
