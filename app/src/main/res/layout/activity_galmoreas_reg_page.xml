@@ -87,27 +87,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_reg"/>
 
-    <RadioGroup
-        android:id="@+id/parntchildbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/password_reg">
-
-        <RadioButton
-            android:id="@+id/parentbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/parentbox"
-            android:paddingEnd="20dp"/>
-
-        <RadioButton
-            android:id="@+id/childbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/childbox"/>
-    </RadioGroup>
 
     <Button
         android:id="@+id/btn_submit"
@@ -119,6 +98,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/parntchildbox"/>
+        app:layout_constraintTop_toBottomOf="@id/email_reg"/>
 
 </android.support.constraint.ConstraintLayout>
