@@ -41,4 +41,17 @@
         app:srcCompat="@drawable/player_wait"
         app:layout_constraintTop_toBottomOf="@+id/highscore"/>
 
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:paddingTop="30dp"
+        android:paddingBottom="150dp"
+        android:paddingStart="150dp"
+        android:fontFamily="@font/pixel"
+        app:layout_constraintTop_toBottomOf="@+id/highscore"/>
+
 </android.support.constraint.ConstraintLayout>

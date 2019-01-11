@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
 public class GalmoreasLoginPage extends AppCompatActivity {
 
     @BindView(R.id.imageView)
-    ImageView player_idle;
+    ImageView login_idle;
     @BindView(R.id.reg_link)
     TextView reg_link;
     @BindView(R.id.login)
@@ -46,7 +46,12 @@ public class GalmoreasLoginPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_galmoreas_login_page);
         ButterKnife.bind(this);
+
+        login_idle.setImageResource(R.drawable.login_idle);
+        AnimationDrawable playerIdle = (AnimationDrawable) login_idle.getDrawable();
+        playerIdle.start();
 
         //Get Authentication from Firebase
         auth = FirebaseAuth.getInstance();
@@ -55,8 +60,6 @@ public class GalmoreasLoginPage extends AppCompatActivity {
             startActivity(new Intent(GalmoreasLoginPage.this, GalmoreasGameStart.class));
             finish();
         }
-
-        setContentView(R.layout.activity_galmoreas_login_page);
 
         //Get Authentication from Firebase
         auth = FirebaseAuth.getInstance();
@@ -117,10 +120,6 @@ public class GalmoreasLoginPage extends AppCompatActivity {
                                 }
                             }
                         });
-
-                player_idle.setImageResource(R.drawable.login_idle);
-                AnimationDrawable playerIdle = (AnimationDrawable) player_idle.getDrawable();
-                playerIdle.start();
 
             }
         });
