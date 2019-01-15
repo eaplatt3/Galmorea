@@ -8,6 +8,7 @@ import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,26 +19,32 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class GalmoreasLevel_2_2 extends AppCompatActivity {
 
-    @BindView(R.id.player)
-    ImageView player;
-    @BindView(R.id.reset_btn)
-    Button reset;
+    @BindView(R.id.player) ImageView player;
+    @BindView(R.id.reset_btn) Button reset;
     @BindView(R.id.next_level_btn) Button nextLevel;
+    @BindView(R.id.exit_btn) Button exit;
     EndDrgLsntr endDrgLsntr;
     StrtDrgLsntr strtDrgLsntr;
     int score;
     private MediaPlayer mediaPlayer;
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_galmoreas_level_2_2);
         ButterKnife.bind(this);
+
+        auth = FirebaseAuth.getInstance();
 
         mediaPlayer = new MediaPlayer();
         mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.background_ambience);
@@ -68,6 +75,29 @@ public class GalmoreasLevel_2_2 extends AppCompatActivity {
                 startActivity(startNewActivity);
             }
         });
+
+        //Checks Users State
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(GalmoreasLevel_2_2.this, GalmoreasLoginPage.class));
+                    finish();
+                }
+            }
+        };
+
+        //Logs user out of App
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
+
 
     }
 
@@ -268,6 +298,26 @@ public class GalmoreasLevel_2_2 extends AppCompatActivity {
             }
         }, 3050);
 
+    }
+
+    //Logout Method
+    public void signOut() {
+        auth.signOut();
+        startActivity(new Intent(GalmoreasLevel_2_2.this, GalmoreasLoginPage.class));
+        finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (authListener != null) {
+            auth.removeAuthStateListener(authListener);
+        }
     }
 
 }

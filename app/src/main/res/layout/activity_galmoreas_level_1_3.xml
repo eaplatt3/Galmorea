@@ -156,5 +156,17 @@
         android:textSize="10sp"
         android:onClick="nextLevel"/>
 
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/pixel"
+        android:text="@string/exit_level"
+        android:textSize="12sp"/>
+
 
 </RelativeLayout>

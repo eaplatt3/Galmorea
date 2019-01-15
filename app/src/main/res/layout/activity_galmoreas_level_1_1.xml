@@ -156,7 +156,6 @@
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/pixel"
         android:text="@string/exit_level"
-        android:textSize="12sp"
-        android:onClick="nextLevel"/>
+        android:textSize="12sp"/>
 
 </RelativeLayout>
