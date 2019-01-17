@@ -26,4 +26,5 @@
     <string name="action_settings">Settings</string>
     <string name="email_login">Enter Email</string>
     <string name="passwd_login">Enter Password</string>
+    <string name="loading">Loading</string>
 </resources>
