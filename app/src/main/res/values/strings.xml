@@ -27,4 +27,6 @@
     <string name="email_login">Enter Email</string>
     <string name="passwd_login">Enter Password</string>
     <string name="loading">Loading</string>
+    <string name="reset_passwd">Reset Password</string>
+    <string name="back"><![CDATA[<< Back]]></string>
 </resources>
