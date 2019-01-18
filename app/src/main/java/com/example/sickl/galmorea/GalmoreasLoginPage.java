@@ -16,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.gms.auth.api.Auth;
@@ -85,6 +84,11 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
+                .build();
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
         if (auth.getCurrentUser() != null) {
@@ -203,13 +207,15 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         int id = v.getId();
-
-        switch (id) {
-            case R.id.sign_in_button:
-                signIn();
-                break;
+        if (id == v.getId()) {
+            signIn();
+            Intent intent = new Intent(GalmoreasLoginPage.this, GalmoreasGameStart.class);
+            startActivity(intent);
+            finish();
         }
     }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -222,7 +228,7 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
         }
     }
 
-    @Override
+     /* @Override
     public void onStart() {
         super.onStart();
 
@@ -240,13 +246,13 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
             showProgressDialog();
             opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
                 @Override
-                public void onResult(GoogleSignInResult googleSignInResult) {
+                public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
                     hideProgressDialog();
                     handleSignInResult(googleSignInResult);
                 }
             });
         }
-    }
+    }*/
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
@@ -281,4 +287,6 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
         }
     }
 
+
 }
+
