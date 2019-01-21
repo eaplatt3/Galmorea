@@ -1,3 +1,9 @@
+//////////////////////////
+//     Galmoreas        //
+//   Earl Platt III     //
+//     © 2018-2019      //
+//////////////////////////
+
 package com.example.sickl.galmorea;
 
 
@@ -38,6 +44,7 @@ import butterknife.ButterKnife;
 
 public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
+    //Objects In XML File
     @BindView(R.id.imageView)
     ImageView login_idle;
     @BindView(R.id.reg_link)
@@ -60,6 +67,8 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
     TextView txtName;
     @BindView(R.id.txtEmail)
     TextView txtEmail;
+
+    //Variables
     private FirebaseAuth auth;
     private static final String TAG = GalmoreasLoginPage.class.getSimpleName();
     private static final int RC_SIGN_IN = 007;
@@ -73,6 +82,7 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_galmoreas_login_page);
         ButterKnife.bind(this);
 
+        //Login Animation
         login_idle.setImageResource(R.drawable.login_idle);
         AnimationDrawable playerIdle = (AnimationDrawable) login_idle.getDrawable();
         playerIdle.start();
@@ -80,8 +90,10 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
         //Get Authentication from Firebase
         auth = FirebaseAuth.getInstance();
 
+        //Sign in Button Listener
         btnSignin.setOnClickListener(this);
 
+        //Google Sigin
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -91,6 +103,7 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
+        //Checking for current logged in user
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(GalmoreasLoginPage.this, GalmoreasGameStart.class));
             finish();
@@ -160,11 +173,13 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
         });
     }
 
+    //Google Sign in Method
     private void signIn(){
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
+    //Google Sign out Method
     private void signOut(){
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
             @Override
@@ -174,6 +189,7 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
         });
     }
 
+    //Method to handle the Google Sign in
     private void handleSignInResult(GoogleSignInResult result){
         Log.d(TAG, "handleSignInResult:" + result.isSuccess());
         if(result.isSuccess()){
@@ -204,6 +220,7 @@ public class GalmoreasLoginPage extends AppCompatActivity implements View.OnClic
 
     }
 
+    //OnClick Method to login & move to the next activity
     @Override
     public void onClick(View v) {
         int id = v.getId();
