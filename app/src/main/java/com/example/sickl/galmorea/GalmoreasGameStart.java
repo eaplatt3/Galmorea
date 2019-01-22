@@ -1,3 +1,9 @@
+//////////////////////////
+//     Galmoreas        //
+//   Earl Platt III     //
+//     © 2018-2019      //
+//////////////////////////
+
 package com.example.sickl.galmorea;
 
 import android.content.Intent;
