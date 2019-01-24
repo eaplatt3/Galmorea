@@ -29,4 +29,6 @@
     <string name="loading">Loading</string>
     <string name="reset_passwd">Reset Password</string>
     <string name="back"><![CDATA[<< Back]]></string>
+    <string name="player_image">player image on wait loop</string>
+    <string name="profilepic">google profile picture</string>
 </resources>
