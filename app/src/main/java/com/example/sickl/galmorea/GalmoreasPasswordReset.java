@@ -40,5 +40,13 @@ public class GalmoreasPasswordReset extends AppCompatActivity {
                 finish();
             }
         });
+
+        //Sends Email with link for User to Reset Password
+        reSetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }
